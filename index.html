@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Milne ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #ffb6c9, #ffd6e5, #fff0f5);
+  color: #8b1645;
+  text-align: center;
+}
+
+.screen {
+  min-height: 100vh;
+  padding: 30px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+h1 {
+  font-size: clamp(30px, 7vw, 44px);
+}
+
+h2 {
+  font-size: 27px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.heart {
+  font-size: 75px;
+  animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.18); }
+}
+
+button {
+  font-family: Georgia, serif;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+
+.choice {
+  border-radius: 35px;
+  padding: 14px 25px;
+  margin: 12px 5px;
+  font-size: 20px;
+}
+
+#yes {
+  background: #e91e63;
+  color: white;
+  position: relative;
+  z-index: 5;
+}
+
+#no {
+  background: white;
+  color: #a3164c;
+  position: relative;
+}
+
+#yes.fullscreen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  font-size: 42px;
+  transform: none !important;
+  z-index: 50;
+}
+
+.menu {
+  width: 100%;
+  max-width: 380px;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  margin: 14px 0;
+  padding: 20px;
+  border-radius: 20px;
+  background: #fff8fb;
+  color: #a3164c;
+  font-size: 22px;
+  box-shadow: 0 5px 15px #a3164c22;
+}
+
+.menu button:hover {
+  transform: scale(1.04);
+}
+
+.paper {
+  width: 100%;
+  max-width: 600px;
+  padding: 25px;
+  background: #fffaf5;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px #a3164c25;
+  text-align: left;
+  color: #63223b;
+}
+
+.paper h2 {
+  text-align: center;
+}
+
+.paper p {
+  font-size: 17px;
+}
+
+.back {
+  margin-top: 22px;
+  padding: 14px 24px;
+  background: #a3164c;
+  color: white;
+  border-radius: 30px;
+  font-size: 17px;
+}
+
+.floating {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  animation: floatUp 5s linear forwards;
+  z-index: 100;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- STARTING PAGE -->
+<section class="screen" id="question">
+  <div class="heart">❤️</div>
+  <h1>Hey, Milne...</h1>
+  <p>There's something I want to ask you.</p>
+  <h2>Do you love me? 🥹💕</h2>
+
+  <div>
+    <button class="choice" id="yes" onclick="sayYes()">
+      YES ❤️
+    </button>
+
+    <button class="choice" id="no" onclick="sayNo()">
+      NO 🙈
+    </button>
+  </div>
+
+  <p id="hint">Choose carefully, my love 💗</p>
+</section>
+
+<!-- THREE GIFT OPTIONS -->
+<section class="screen hidden" id="gifts">
+  <div class="heart">💖</div>
+  <h1>My Milne ❤️</h1>
+  <p>You make my world more beautiful.</p>
+  <p>Choose something special, my love...</p>
+
+  <div class="menu">
+    <button onclick="show('memories')">
+      📸 Memories
+    </button>
+
+    <button onclick="show('letter')">
+      💌 Letter
+    </button>
+
+    <button onclick="show('heartPage')">
+      ❤️ My Heart
+    </button>
+  </div>
+</section>
+
+<!-- LETTER -->
+<section class="screen hidden" id="letter">
+  <div class="paper">
+    <div style="font-size:45px;text-align:center">💌</div>
+    <h1 style="text-align:center">A Letter for You ❤️</h1>
+
+    <p>
+      Dear Milne ❤️
+      <br><br>
+
+      I just want you to know how special you are to me.
+      You bring happiness into my life in ways I can't always
+      explain. Your smile can make an ordinary day feel special,
+      and every moment we share becomes a memory I treasure.
+      <br><br>
+
+      Thank you for being you. I hope I can keep giving you
+      reasons to smile, making beautiful memories with you,
+      and showing you how much you mean to me. You have a
+      very special place in my heart, and I am so grateful
+      to have you in my life.
+      <br><br>
+
+      I want you to know that you are loved and appreciated.
+      I want to be there for you on the happy days and the
+      difficult days. I want us to keep laughing together,
+      learning about each other, and making memories that
+      we will always remember.
+      <br><br>
+
+      I might not always have the perfect words to explain
+      my feelings, but I hope my actions will show you how
+      much you mean to me. You are someone very special,
+      and I am grateful to have you in my life.
+      <br><br>
+
+      Never forget how much you mean to me, my girl. ❤️
+      <br><br>
+
+      From Luka love you❤️
+    </p>
+  </div>
+
+  <button class="back" onclick="show('gifts')">
+    ← Back to gifts
+  </button>
+</section>
+
+<!-- MEMORIES -->
+<section class="screen hidden" id="memories">
+  <div class="paper">
+    <div style="font-size:50px;text-align:center">📸💗</div>
+    <h1 style="text-align:center">Our Memories</h1>
+
+    <p>
+      I love memories. My favorite memories are the ones
+      that I created with you. ❤️
+    </p>
+
+    <p>
+      Every moment with you means more to me than you could
+      ever imagine. Whether we're laughing, talking about
+      random things, being silly, or simply spending time
+      together, those little moments become memories
+      that I want to keep forever.
+    </p>
+
+    <p>
+      If I could relive some of the best moments in my life,
+      I would choose the ones where I got to be with you.
+      You make ordinary days feel special, and the smallest
+      things become beautiful when you're part of them.
+    </p>
+
+    <p>
+      I hope we get to make many more memories together.
+      This is only the beginning of our story. 💞
+    </p>
+
+    <p style="text-align:center">
+      <strong>More memories with you, please. ❤️</strong>
+    </p>
+  </div>
+
+  <button class="back" onclick="show('gifts')">
+    ← Back to gifts
+  </button>
+</section>
+
+<!-- MY HEART -->
+<section class="screen hidden" id="heartPage">
+  <div class="paper">
+    <div style="font-size:65px;text-align:center">❤️</div>
+    <h1 style="text-align:center">My Heart Belongs to You</h1>
+
+    <p>
+      Dear Milne ❤️
+      <br><br>
+
+      My heart belongs to you. Not because I have to give
+      it to you, but because loving you is something I choose
+      with all my heart.
+      <br><br>
+
+      If my heart could speak, it would tell you your name
+      a thousand times. It would tell you how much you mean
+      to me, how grateful I am for you, and how you have
+      become such a beautiful part of my life.
+      <br><br>
+
+      I cannot promise that every day will be perfect,
+      but I can promise to keep trying, to listen, to be
+      honest, and to show you that you are appreciated.
+      <br><br>
+
+      You have a special place in my heart that nobody else
+      could fill in exactly the same way. I hope I can keep
+      making you smile and giving you reasons to feel loved.
+      <br><br>
+
+      You are special to me, Milne, and I hope you never
+      forget that. ❤️
+      <br><br>
+
+      From Luka love you❤️
+    </p>
+  </div>
+
+  <button class="back" onclick="show('gifts')">
+    ← Back to gifts
+  </button>
+</section>
+
+<script>
+let noClicks = 0;
+let yesScale = 1;
+let accepted = false;
+
+function show(id) {
+  document.querySelectorAll(".screen").forEach(function(section) {
+    section.classList.add("hidden");
+  });
+
+  const target = document.getElementById(id);
+
+  if (target) {
+    target.classList.remove("hidden");
+  }
+
+  window.scrollTo(0, 0);
+  burstHearts();
+}
+
+function sayNo() {
+  if (accepted) return;
+
+  noClicks++;
+
+  const yes = document.getElementById("yes");
+  const no = document.getElementById("no");
+  const hint = document.getElementById("hint");
+
+  yesScale *= 1.4;
+
+  yes.style.transform = "scale(" + Math.min(yesScale, 4) + ")";
+  yes.style.fontSize = Math.min(20 + noClicks * 5, 45) + "px";
+
+  no.style.transform =
+    "scale(" + Math.max(1 - noClicks * 0.13, 0.4) + ")";
+
+  const messages = [
+    "Are you sure, my love? 🥺",
+    "Think about it again! ❤️",
+    "The YES button is getting bigger! 💗",
+    "My heart is waiting for you! 💞",
+    "Looks like YES is your only choice now! 😘"
+  ];
+
+  hint.textContent = messages[Math.min(noClicks - 1, messages.length - 1)];
+
+  if (noClicks >= 5) {
+    yes.classList.add("fullscreen");
+    yes.textContent = "YES ❤️";
+    no.style.display = "none";
+    hint.textContent = "Tap YES to open your gifts 💕";
+  }
+}
+
+function sayYes() {
+  accepted = true;
+  show("gifts");
+}
+
+function burstHearts() {
+  for (let i = 0; i < 12; i++) {
+    const heart = document.createElement("div");
+
+    heart.className = "floating";
+    heart.textContent = ["❤️", "💗", "💕", "💖", "💘"][
+      Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+      heart.remove();
+    }, 6500);
+  }
+}
+</script>
+
+</body>
+</html>
